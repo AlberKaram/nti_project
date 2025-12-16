@@ -51,3 +51,15 @@ variable "az_private_sub" {
   type = string
   default = "us-east-2b"
 }
+
+##### public route table ###
+variable "pub_rt_name" {
+  type = string
+  default = "pub_rt"
+}
+
+##### private route table ###
+variable "private_rt_name" {
+  type = string
+  default = "private_rt"
+}

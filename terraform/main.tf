@@ -24,3 +24,18 @@ module "private_sub" {
     private_subnet_name = var.private_subnet_name
     az_private_sub = var.az_private_sub
 }
+
+module "pub_network" {
+    source = "./modules/3-igw-route"
+    vpc_id = module.vpc.vpc_id
+    public_subnet_id = module.pub_sub.public_subnet_id
+    pub_rt_name = var.pub_rt_name
+}
+
+module "private_network" {
+    source = "./modules/4-ngw-route"
+    vpc_id = module.vpc.vpc_id
+    public_subnet_id = module.pub_sub.public_subnet_id
+    private_subnet_id = module.private_sub.private_subnet_id
+    private_rt_name = var.private_rt_name
+}
