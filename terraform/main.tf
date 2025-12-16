@@ -39,3 +39,8 @@ module "private_network" {
     private_subnet_id = module.private_sub.private_subnet_id
     private_rt_name = var.private_rt_name
 }
+
+module "SG" {
+  source = "./modules/5-Security Groups"
+  vpc_id = module.vpc.vpc_id
+}
