@@ -44,3 +44,8 @@ module "SG" {
   source = "./modules/5-Security Groups"
   vpc_id = module.vpc.vpc_id
 }
+
+module "iam" {
+  source = "./modules/6-iam"
+  project_name = var.project_name
+}

@@ -63,3 +63,10 @@ variable "private_rt_name" {
   type = string
   default = "private_rt"
 }
+
+##### iam ###
+
+variable "project_name" {
+  type = string
+  default = "nti_ptoject"
+}
